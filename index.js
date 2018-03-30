@@ -148,6 +148,7 @@ ShareDbMongo.prototype._connect = function(mongo, options) {
   }
   var finish = function(err, client) {
     if (err) throw err;
+    console.log('options: ' + options.mongoOptions);
     var db = client.db('snotes');
     self.mongo = db;
     self._flushPendingConnect();
